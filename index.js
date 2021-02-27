@@ -1,10 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const cors = require("cors");
 
 const app = express();
 
 const PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8081;
+
+// enable cors
+app.use(cors());
 
 // body parser setup
 app.use(bodyParser.urlencoded({ extended: true }));
